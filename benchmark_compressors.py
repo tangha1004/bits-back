@@ -83,12 +83,12 @@ if __name__ == "__main__":
         pimg_compress('WebP', lossless=True, quality=100), "WebP", images, 'binarized mnist')
 
     # ImageNet
-    images = load_imagenet_valid()
-    bench_compressor(gzip_compress, "gzip",  images, 'imagenet')
-    bench_compressor(bz2_compress,   "bz2",  images, 'imagenet')
-    bench_compressor(lzma_compress, "lzma",  images, 'imagenet')
-    bench_compressor(
-        pimg_compress("PNG", optimize=True), "PNG", images, 'binarized mnist')
-    bench_compressor(
-        pimg_compress('WebP', lossless=True, quality=100), "WebP", images,
-        'imagenet')
+    # images = load_imagenet_valid()
+    # bench_compressor(gzip_compress, "gzip",  images, 'imagenet')
+    # bench_compressor(bz2_compress,   "bz2",  images, 'imagenet')
+    # bench_compressor(lzma_compress, "lzma",  images, 'imagenet')
+    # bench_compressor(
+    #     pimg_compress("PNG", optimize=True), "PNG", images, 'binarized mnist')
+    # bench_compressor(
+    #     pimg_compress('WebP', lossless=True, quality=100), "WebP", images,
+    #     'imagenet')
