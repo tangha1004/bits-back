@@ -61,3 +61,4 @@ for i in range(num_images):
     axes[i, 1].axis('off')
 plt.tight_layout()
 plt.show()
+plt.savefig('bbans_recon_compare.png', dpi=200)
