@@ -6,6 +6,8 @@ from torch_vae.tvae_beta_binomial import BetaBinomialVAE
 from torch_vae import tvae_utils
 from torchvision import datasets, transforms
 import matplotlib.pyplot as plt
+from pytorch_msssim import ms_ssim
+
 
 # --- Load model ---
 latent_dim = 50
@@ -62,3 +64,12 @@ for i in range(num_images):
 plt.tight_layout()
 plt.show()
 plt.savefig('bbans_recon_compare.png', dpi=200)
+
+mse_list = []
+for i in range(num_images):
+    orig = images[i].numpy().reshape(1, 1, 28, 28) / 255.0
+    recon = reconstructed_images[num_images-i-1].reshape(1, 1, 28, 28) / 255.0
+    mse = np.mean((orig - recon) ** 2)
+    mse_list.append(mse)
+
+print("MSE trung bình:", np.mean(mse_list))
